@@ -11,9 +11,9 @@ const actionTrigger = () => {
 function App() {
   return (
     <div className="App">
-      {/* <Main /> */}
-      <p onClick={actionTrigger}> Happy birthday RAJALAKSHMI </p>
-      <BithdayCard />
+       <Main /> 
+      {/* <p onClick={actionTrigger}> Happy birthday RAJALAKSHMI </p>
+      <BithdayCard /> */}
     </div>
   );
 }
