@@ -7,7 +7,11 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Checkbox from '@mui/material/Checkbox';
 import Avatar from '@mui/material/Avatar';
 
-export default function CheckboxListSecondary() {
+interface CheckboxListrops {
+  inputArray: [],
+}
+
+const ListViewWIthCheckBox = (props:CheckboxListrops) => {
   const [checked, setChecked] = React.useState([1]);
 
   const handleToggle = (value: number) => () => {
@@ -25,7 +29,7 @@ export default function CheckboxListSecondary() {
 
   return (
     <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
+      {props.inputArray.map((value: any) => {
         const labelId = `checkbox-list-secondary-label-${value}`;
         return (
           <ListItem
@@ -47,7 +51,7 @@ export default function CheckboxListSecondary() {
                   src={`/static/images/avatar/${value + 1}.jpg`}
                 />
               </ListItemAvatar>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={value} />
             </ListItemButton>
           </ListItem>
         );
@@ -55,3 +59,5 @@ export default function CheckboxListSecondary() {
     </List>
   );
 }
+
+export default ListViewWIthCheckBox;
