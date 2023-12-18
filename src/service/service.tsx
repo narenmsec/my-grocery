@@ -13,10 +13,15 @@ const addItems = (param: {}) => {
     return mainAPI.post('/insertItem', param);
 }
 
+const generateOtp = (param: {}) => {
+    return mainAPI.post('/sendSMS', param);
+}
+
 const service = {
     //getRtoPendingContractData,
     getAllItems,
     addItems,
+    generateOtp,
 }
 
 export default service;
