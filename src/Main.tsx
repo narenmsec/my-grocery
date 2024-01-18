@@ -83,13 +83,13 @@ function Main() {
         setAddItemsDialogOpen(false);
     }
 
-    const mobileOtpHandleClickOpen = () => {
-        setMobileOtpDialogOpen(true);
-    };
+    // const mobileOtpHandleClickOpen = () => {
+    //     setMobileOtpDialogOpen(true);
+    // };
 
-    const mobileOtpDialogClose = () => {
-        setMobileOtpDialogOpen(false);
-    }
+    // const mobileOtpDialogClose = () => {
+    //     setMobileOtpDialogOpen(false);
+    // }
 
 
     const dialogSave = (param: any) => {
@@ -107,19 +107,19 @@ function Main() {
         setAddItemsDialogOpen(false);
     }
 
-    const mobileOtpdialogSave = (param: any) => {
-        Service.generateOtp(param)
-            .then((response) => {
-                if (response) {
-                    // setInputValue(response);
-                    console.log(response);
-                    // setAllItems([...allItems , param]);
-                }
-            }).catch(error => {
-                // setErrorMtd(error);
-            });
-        setMobileOtpDialogOpen(false);
-    }
+    // const mobileOtpdialogSave = (param: any) => {
+    //     Service.generateOtp(param)
+    //         .then((response) => {
+    //             if (response) {
+    //                 // setInputValue(response);
+    //                 console.log(response);
+    //                 // setAllItems([...allItems , param]);
+    //             }
+    //         }).catch(error => {
+    //             // setErrorMtd(error);
+    //         });
+    //     setMobileOtpDialogOpen(false);
+    // }
 
     return (
         <div >
@@ -133,11 +133,11 @@ function Main() {
                 </Button>
             </div>
             <CheckboxList inputArray={input} />
-            <Button variant="outlined" onClick={mobileOtpHandleClickOpen}>
+            {/* <Button variant="outlined" onClick={mobileOtpHandleClickOpen}>
                 OTP generate
-            </Button>
+            </Button> */}
             <AddItemsDialog showDialogFlag={addItemsDialogOpen} handleClose={dialogClose} handleSaveCall={dialogSave} />
-            <MobileOtpSend showDialogFlag={mobileOtpDialogOpen} handleClose={mobileOtpDialogClose} handleSaveCall={mobileOtpdialogSave} />
+            {/* <MobileOtpSend showDialogFlag={mobileOtpDialogOpen} handleClose={mobileOtpDialogClose} handleSaveCall={mobileOtpdialogSave} /> */}
         </div>
     );
 
